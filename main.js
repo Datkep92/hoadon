@@ -175,12 +175,14 @@ function renderXmlTable(rowsArg) {
       #xmlTable tbody tr:nth-child(even):hover{background-color:#f0f4f8;}
       .table-header{margin:10px 0 12px 0;font-size:18px;font-weight:600;color:#2c3e50;padding-bottom:8px;border-bottom:2px solid #eaeaea;}
     </style>
-    <div class="table-header">📄 Bảng tổng hợp XML (1 file = 1 dòng) ${rows===xmlRows?"":"— lọc theo HKD"}</div>
+    <div class="table-header">📄 Bảng tổng hợp hóa đơn xuất hàng ${rows===xmlRows?"":"— lọc theo HKD"}</div>
     <div id="xmlTableContainer">
       <table id="xmlTable">
         <thead><tr>
           ${ALL_COLS.map(c => `<th>${c}</th>`).join("")}
         </tr></thead>
+        <button onclick="exportCurrentTable()">📤 Xuất Excel</button>
+
         <tbody>
   `;
 
